@@ -9,6 +9,7 @@ import { IUser } from '../../DUMMY_DATA';
 })
 export class User {
   @Input({ required: true }) user!: IUser;
+  @Input() selected!: boolean;
   @Output() selectUser = new EventEmitter<number>();
 
   onSelect() {

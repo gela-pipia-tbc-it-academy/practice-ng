@@ -4,7 +4,7 @@
 <main>
     <div class="users-list">
         @for(user of users; track user.id) {
-            <app-user (selectUser)="onSelectUser($event)" [user]="user"></app-user>
+            <app-user (selectUser)="onSelectUser($event)" [selected]="user.id === selectedUserId" [user]="user"></app-user>
         }
     </div>
     <div class="tasks-section">
