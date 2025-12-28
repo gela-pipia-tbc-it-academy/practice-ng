@@ -17,7 +17,6 @@ export class Tasks {
   }
 
   onCompleteTask(id: number) {
-    console.log('Task with id ' + id + ' completed by ' + this.user.name);
     for(let user of DUMMY_USERS) {
       if(user.id === this.user.id) {
         user.tasks = user.tasks.filter(task => task.id !== id);
