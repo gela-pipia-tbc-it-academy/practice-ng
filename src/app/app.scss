@@ -1,0 +1,12 @@
+main {
+    display: flex;
+    gap: 30px;
+    border: 2px dashed black;
+}
+
+.users-list {
+    display: flex;
+    flex-direction: column;
+    background-color: darkblue;
+    color: white;
+}
