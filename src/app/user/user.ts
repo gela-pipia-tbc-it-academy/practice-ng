@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { IUser } from '../../DUMMY_DATA';
 
 @Component({
   selector: 'app-user',
@@ -7,12 +8,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './user.scss',
 })
 export class User {
-  @Input({ required: true }) id!: number;
-  @Input({ required: true }) name!: string;
-  @Input({ required: true }) avatar!: string;
+  @Input({ required: true }) user!: IUser;
   @Output() selectUser = new EventEmitter<number>();
 
   onSelect() {
-    this.selectUser.emit(this.id);
+    this.selectUser.emit(this.user.id);
   }
 }

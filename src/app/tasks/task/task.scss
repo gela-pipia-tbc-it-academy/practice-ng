@@ -1,0 +1,40 @@
+article {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+    background-color: #f9f9f9;
+
+    h3 {
+        margin: 0 0 8px 0;
+        font-size: 1.2em;
+    }
+
+    time {
+        font-size: 0.9em;
+        color: #666;
+    }
+
+    p {
+        margin: 12px 0;
+        font-size: 1em;
+        color: #333;
+    }
+
+    .actions {
+        margin-top: 12px;
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #218838;
+            }
+        }
+    }
+}
