@@ -3,16 +3,14 @@ main {
     gap: 30px;
     border: 2px dashed black;
 
+    app-card {
+        flex: 1;
+    }
+
     .users-list {
         display: flex;
         flex-direction: column;
         background-color: darkblue;
         color: white;
-    }
-
-    .tasks-section {
-        flex: 1;
-        padding: 10px;
-        // height: 100%;
     }
 }
