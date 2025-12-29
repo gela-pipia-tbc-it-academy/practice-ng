@@ -2,14 +2,14 @@
 <main>
     <div class="users-list">
         @for(user of users; track user.id) {
-            <app-user (selectUser)="onSelectUser($event)" [selected]="user.id === selectedUserId" [user]="user"></app-user>
+        <app-user (selectUser)="onSelectUser($event)" [selected]="user.id === selectedUserId" [user]="user"></app-user>
         }
     </div>
-    <div class="tasks-section">
+    <app-card>
         @if(selectedUser) {
-            <app-tasks [user]="selectedUser"></app-tasks>
+        <app-tasks [user]="selectedUser"></app-tasks>
         } @else {
-            <p>Please select a user to view their tasks.</p>
+        <p>Please select a user to view their tasks.</p>
         }
-    </div>
+    </app-card>
 </main>
