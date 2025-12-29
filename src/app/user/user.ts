@@ -3,7 +3,7 @@ import { IUser } from './user.model';
 
 @Component({
   selector: 'app-user',
-  imports: [],
+  standalone: false,
   templateUrl: './user.html',
   styleUrl: './user.scss',
 })
