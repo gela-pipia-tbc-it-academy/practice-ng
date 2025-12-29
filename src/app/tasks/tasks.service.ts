@@ -90,11 +90,24 @@ export class TasksService {
       },
     ];
 
+    constructor() {
+      const tasksFromStorage = localStorage.getItem('tasks');
+      if (tasksFromStorage) {
+        this.tasks = JSON.parse(tasksFromStorage);
+      }
+    }
+
+    saveTasks() {
+      localStorage.setItem('tasks', JSON.stringify(this.tasks));
+    }
+
     removeTask(id: number): void {
       this.tasks = this.tasks.filter(task => task.id !== id);
+      this.saveTasks();
     }
 
     addTask(task: Omit<ITask, 'id'>): void {
       this.tasks.unshift({...task, id: this.tasks.length + 1} as ITask)
+      this.saveTasks();
     }
 }
