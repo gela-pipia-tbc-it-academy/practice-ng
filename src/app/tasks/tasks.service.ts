@@ -90,7 +90,11 @@ export class TasksService {
       },
     ];
 
-    removeTask(id: number) {
+    removeTask(id: number): void {
       this.tasks = this.tasks.filter(task => task.id !== id);
+    }
+
+    addTask(task: Omit<ITask, 'id'>): void {
+      this.tasks.unshift({...task, id: this.tasks.length + 1} as ITask)
     }
 }

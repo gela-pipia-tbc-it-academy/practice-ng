@@ -1,0 +1,26 @@
+<div class="overlay" (click)="onClose()"></div>
+<div class="container">
+    <form (ngSubmit)="onSubmit()">
+        <h2>add new task</h2>
+
+        <p>
+            <label for="title">Title</label>
+            <input name="title" type="text" id="title" [(ngModel)]="enteredTitle" />
+        </p>
+
+        <p>
+            <label for="summary">Summary</label>
+            <input name="summary" type="text" id="summary" [(ngModel)]="enteredSummary" />
+        </p>
+        
+
+        <p>
+            <label for="dueDate">Due Date</label>
+            <input name="dueDate" type="date" id="dueDate" [(ngModel)]="enteredDate" />
+        </p>
+
+        <button type="button" (click)="onClose()">Cancel</button>
+        <button type="submit">Add New Task</button>
+
+    </form>
+</div>

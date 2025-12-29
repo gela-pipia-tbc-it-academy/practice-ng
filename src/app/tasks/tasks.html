@@ -1,7 +1,10 @@
 <div class="container">
+    @if(showNewTaskForm) {
+        <app-new-task (close)="onClose()" [userId]="user.id" />
+    }
     <header>
         <h2>{{ user.name }}'s Tasks</h2>
-        <button>Add Task</button>
+        <button (click)="showNewTaskForm = !showNewTaskForm">Add Task</button>
     </header>
     <ul>
         @for(task of tasks; track task.id) {
