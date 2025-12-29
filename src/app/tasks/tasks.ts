@@ -1,7 +1,7 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { Task } from './task/task';
-import { IUser } from '../../DUMMY_DATA';
-import { users as DUMMY_USERS } from '../../DUMMY_DATA';
+import { TasksService } from './tasks.service';
+import { IUser } from '../user/user.model';
 
 @Component({
   selector: 'app-tasks',
@@ -10,18 +10,11 @@ import { users as DUMMY_USERS } from '../../DUMMY_DATA';
   styleUrl: './tasks.scss',
 })
 export class Tasks {
+  private tasksService = inject(TasksService);
   @Input({ required: true }) user!: IUser;
 
   get tasks() {
-    return this.user.tasks;
+    return this.tasksService.tasks.filter(task => task.userId === this.user.id);
   }
 
-  onCompleteTask(id: number) {
-    for(let user of DUMMY_USERS) {
-      if(user.id === this.user.id) {
-        user.tasks = user.tasks.filter(task => task.id !== id);
-        break;
-      }
-    }
-  }
 }

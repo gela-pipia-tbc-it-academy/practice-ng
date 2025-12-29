@@ -4,9 +4,9 @@
         <button>Add Task</button>
     </header>
     <ul>
-        @for(task of user.tasks; track task.id) {
+        @for(task of tasks; track task.id) {
             <li>
-                <app-task (complete)="onCompleteTask($event)" [task]="task"></app-task>
+                <app-task [task]="task"></app-task>
             </li>
         }
     </ul>

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { IUser } from '../../DUMMY_DATA';
+import { IUser } from './user.model';
 
 @Component({
   selector: 'app-user',

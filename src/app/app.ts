@@ -1,7 +1,7 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { User } from "./user/user";
-import { users as DUMMY_USERS } from '../DUMMY_DATA';
 import { Tasks } from './tasks/tasks';
+import { UserService } from './user/user.service';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +10,11 @@ import { Tasks } from './tasks/tasks';
   styleUrl: './app.scss'
 })
 export class App {
-  users = DUMMY_USERS;
+  userService = inject(UserService);
+
+  users = this.userService.users
   selectedUserId!: number;
+  
   get selectedUser() {
     return this.users.find(u => u.id === this.selectedUserId)!;
   }
