@@ -1,11 +1,9 @@
-import { Component, computed, inject, signal } from '@angular/core';
-import { User } from "./user/user";
-import { Tasks } from './tasks/tasks';
+import { Component, inject } from '@angular/core';
 import { UserService } from './user/user.service';
 
 @Component({
   selector: 'app-root',
-  imports: [User, Tasks],
+  standalone: false,
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
